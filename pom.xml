@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.padillatom</groupId>
-	<artifactId>ecommerce-chad</artifactId>
+	<artifactId>sba-onlinestore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ecommerce-chad</name>
 	<description>Spring Boot App for an Ecommerce Website</description>
