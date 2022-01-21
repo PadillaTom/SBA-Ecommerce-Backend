@@ -34,8 +34,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
                 .allowedOrigins("*") //
                 .allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH") //
                 .allowedHeaders("*") //
-                .exposedHeaders("WWW-Authenticate") //
-                .allowCredentials(true)
+                .allowCredentials(false)
                 .maxAge(TimeUnit.DAYS.toSeconds(1));
 
         // To Be Disabled:
