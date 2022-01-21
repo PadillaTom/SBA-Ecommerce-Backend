@@ -16,6 +16,7 @@ import javax.persistence.metamodel.EntityType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class DataRestConfig implements RepositoryRestConfigurer {
@@ -29,11 +30,13 @@ public class DataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         // CORS:
-        cors.addMapping("/*")
-                .allowedOrigins("*")
-                .allowedMethods("GET")
-                .allowCredentials(false)
-                .maxAge(3600);
+        cors.addMapping("/**") //
+                .allowedOrigins("*") //
+                .allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH") //
+                .allowedHeaders("*") //
+                .exposedHeaders("WWW-Authenticate") //
+                .allowCredentials(true)
+                .maxAge(TimeUnit.DAYS.toSeconds(1));
 
         // To Be Disabled:
         HttpMethod[] theUnsupportedActions = {HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE};
