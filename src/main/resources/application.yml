@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${DB_URL:localhost:8889}/sba-onlinestore
+    username: ${DB_USER:ecommerce}
+    password: ${DB_PASS:ecommerce}
+  jpa:
+    generate-ddl: true
+    show-sql: true
+
+server:
+  port: {$PORT:8080}
+  servlet:
+    contextPath: /api
