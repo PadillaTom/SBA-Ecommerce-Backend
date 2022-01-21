@@ -29,7 +29,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         // CORS:
-        cors.addMapping("/*").allowedOrigins("*");
+        cors.addMapping("/*").allowedOrigins("*").allowedMethods("GET").allowCredentials(false);
 
         // To Be Disabled:
         HttpMethod[] theUnsupportedActions = {HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE};
