@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@CrossOrigin( origins = {"http://localhost:4200","https://sba-onlinestore.netlify.app/*"})
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Page<Product> findByCategoryId(@RequestParam ("id") Long id, Pageable pageable);
