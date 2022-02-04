@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/checkout")
+@CrossOrigin(origins = {"http://localhost:4200/*", "https://sba-onlinestore.netlify.app/*"})
 public class CheckoutController {
 
     private CheckoutService checkoutService;
