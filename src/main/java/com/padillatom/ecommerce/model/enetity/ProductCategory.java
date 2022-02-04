@@ -1,6 +1,5 @@
 package com.padillatom.ecommerce.model.enetity;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
